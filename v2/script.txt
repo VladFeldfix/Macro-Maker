@@ -1,0 +1,2 @@
+SET_ALARM()
+MOUSE_CLICK(left)
