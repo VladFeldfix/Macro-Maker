@@ -30,7 +30,6 @@ class main:
         functions["MOUSE_POS_SET"] = (self.MOUSE_POS_SET, ("X", "Y"))
         functions["MOUSE_CLICK"] = (self.MOUSE_CLICK, ("BUTTON",))
         functions["MOUSE_DOWN"] = (self.MOUSE_DOWN, ("BUTTON",))
-    
         functions["MOUSE_UP"] = (self.MOUSE_UP, ("BUTTON",))
         functions["KEYBOARD_CLICK"] = (self.KEYBOARD_CLICK, ("BUTTON",))
         functions["KEYBOARD_PRESS"] = (self.KEYBOARD_PRESS, ("BUTTON",))
