@@ -10,9 +10,9 @@ class main:
         self.sc = SmartConsole("Macro Maker", "1.0")
         
         # set-up main memu
-        self.sc.main_menu["RUN"] = self.run
-        self.sc.main_menu["EDIT LIST"] = self.edit_list
-        self.sc.main_menu["EDIT SCRIPT"] = self.edit_script
+        self.sc.add_main_menu_item("RUN", self.run)
+        self.sc.add_main_menu_item("EDIT LIST", self.edit_list)
+        self.sc.add_main_menu_item("EDIT SCRIPT", self.edit_script)
 
         # get settings
         self.script = self.sc.get_setting("Script Location")
