@@ -138,8 +138,10 @@ class main:
                 text = text.split("#")
                 if text[0].upper() == "LSTVAL":
                     keyboard.write(self.list_row[int(text[1])])
+                elif text[0].upper() == "INPUTDATA":
+                    keyboard.write(self.script_input)
                 else:
-                    keyboard.write(int(text[0]))
+                    keyboard.write(text[0])
             else:
                 self.list_of_loop_commands.append((self.KEYBOARD_WRITE,arguments))
         except Exception as e:
@@ -190,10 +192,12 @@ class main:
     def LOOP(self, arguments):
         try:
             self.looping_cycles = arguments[0]
-            if self.looping_cycles.upper() != "LIST":
-                self.looping_cycles = int(self.looping_cycles)
-            else:
+            if self.looping_cycles.upper() == "LIST":
                 self.looping_cycles = "LIST"
+            elif self.looping_cycles.upper() == "INPUTDATA":
+                self.looping_cycles = int(self.script_input)
+            else:
+                self.looping_cycles = int(self.looping_cycles)
             self.looping_activated = True
         except Exception as e:
             self.sc.fatal_error(str(e))
@@ -223,6 +227,7 @@ class main:
                         command = command_args[0]
                         args = command_args[1]
                         command(args)
+            self.list_of_loop_commands = []
         except Exception as e:
             self.sc.fatal_error(str(e))
 main()
