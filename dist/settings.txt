@@ -1,1 +1,0 @@
-Script Location > script.txt
